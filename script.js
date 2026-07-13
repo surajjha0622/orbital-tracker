@@ -87,14 +87,20 @@ function runSequence(data) {
       globe.pointsData([{ lat, lng, size: 0.5, color: "red" }]);
 
       setTimeout(() => {
-        document.getElementById("final").innerHTML = `
-          <hr>
+        const panel = document.getElementById("panel");
+        const final = document.getElementById("final");
+
+        panel.classList.add("fade-out");
+
+        final.innerHTML = `
           <h1>🎉 TARGET ACQUIRED 🎉</h1>
           <h2>Happy Birthday ${NAME}!</h2>
-          <b>Location:</b> ${CITY}<br>
-          <b>Orbit Count:</b> ${AGE}<br><br>
-          Mission Status : SUCCESS ✅
+          <div><b>Location:</b> ${CITY}</div>
+          <div><b>Orbit Count:</b> ${AGE}</div>
+          <div>Mission Status : SUCCESS ✅</div>
         `;
+        final.classList.add("show");
+
         confetti();
         playRevealChime();
       }, 5000);
