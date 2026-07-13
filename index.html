@@ -7,12 +7,15 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://unpkg.com/globe.gl"></script>
-<script src="https://unpkg.com/three"></script>
+<!-- Pinned versions so an upstream breaking release can't silently break this -->
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl@2.27.2/dist/globe.gl.min.js"></script>
 
 </head>
 
 <body>
+
+<div id="loading">Initializing orbital link...</div>
 
 <div id="globe"></div>
 
